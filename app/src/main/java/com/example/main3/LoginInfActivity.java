@@ -37,7 +37,7 @@ public class LoginInfActivity extends AppCompatActivity {
 
 
         tv_id = (TextView) findViewById(R.id.tv_id);
-        tv_pass = (TextView) findViewById(R.id.tv_pass);
+       // tv_pass = (TextView) findViewById(R.id.tv_pass);
         tv_birth = (TextView) findViewById(R.id.tv_birth);
         tv_location = (TextView) findViewById(R.id.tv_location);
         tv_sex = (TextView) findViewById(R.id.tv_sex);
@@ -53,7 +53,7 @@ public class LoginInfActivity extends AppCompatActivity {
 
 
         tv_id.setText(User_id);
-        tv_pass.setText(User_pass);
+        //tv_pass.setText(User_pass);
         tv_birth.setText(User_birth);
         tv_location.setText(User_location);
         tv_sex.setText(User_sex);

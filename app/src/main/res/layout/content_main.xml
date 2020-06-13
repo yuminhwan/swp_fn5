@@ -36,15 +36,15 @@
                 android:textSize="24sp" />
 
             <ImageButton
-                android:id="@+id/bottom2"
+                android:id="@+id/bottom6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/btndi"
                 android:gravity="center"
-                android:onClick="btn2"
-                android:src="@drawable/corona"
+                android:textSize="24sp"
+                android:background="@drawable/btndi"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                android:src="@drawable/medi_btn2"
+                android:onClick="btn5"/>
 
         </TableRow>
 
@@ -90,15 +90,15 @@
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
             <ImageButton
-                android:id="@+id/bottom6"
+                android:id="@+id/bottom2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="24sp"
                 android:background="@drawable/btndi"
+                android:gravity="center"
+                android:onClick="btn2"
+                android:src="@drawable/corona"
                 android:textColor="#FFFFFF"
-               android:src="@drawable/medi_btn2"
-                android:onClick="btn5"/>
+                android:textSize="24sp" />
 
         </TableRow>
 

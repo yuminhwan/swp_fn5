@@ -61,6 +61,7 @@ public class coronaAct extends AppCompatActivity implements OnMapReadyCallback {
 
             markerOptions.title(title[i]);
             markerOptions.snippet(information[i]);
+            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.person));
             //markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE));
 
             mMap.addMarker(markerOptions);
@@ -166,7 +167,7 @@ public class coronaAct extends AppCompatActivity implements OnMapReadyCallback {
             markerOptions.position(name1);
             markerOptions.title(title1[j]);
             markerOptions.snippet(information1[j]);
-            markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
+            markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.place));
             mMap.addMarker(markerOptions);
         }
 

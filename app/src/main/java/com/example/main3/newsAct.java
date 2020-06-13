@@ -3,11 +3,14 @@ package com.example.main3;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.View;
 
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,6 +39,17 @@ public class newsAct<privated> extends AppCompatActivity {
         setContentView(R.layout.news_activity_main);
 
         new NewsAsyncTask().execute();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+        toolbar.findViewById(R.id.toolbar_email1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(newsAct.this, LoginInfActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

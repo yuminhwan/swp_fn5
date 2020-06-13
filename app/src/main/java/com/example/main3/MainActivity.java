@@ -247,7 +247,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONArray jArray = new JSONArray(result);
                             clinics.clear();
 
-                            for (int i = 0; i <50 ; i++) {
+                            for (int i = 0; i <100 ; i++) {
                                 Clinic clinic = new Clinic();
                                 JSONObject jsonObject1 = (JSONObject) jArray.get(i);
                                 clinic.setNumber(jsonObject1.getString("Hospital_num"));
@@ -355,7 +355,7 @@ public class MainActivity extends AppCompatActivity {
                             JSONArray jArray = new JSONArray(result);
                             Medi.clear();
 
-                            for (int i = 0; i <50; i++) {
+                            for (int i = 0; i <100; i++) {
                                 com.example.main3.Medi medi = new Medi();
                                 JSONObject jsonObject1 = (JSONObject) jArray.get(i);
                                 medi.setNumber(jsonObject1.getString("Medi_num"));
