@@ -67,7 +67,7 @@ public class ReviewActivity extends AppCompatActivity {
                 SimpleDateFormat simpleDate = new SimpleDateFormat("yyyy-MM-dd");
 
                 RbPreference pref = new RbPreference(mContext);
-                String Review_user = pref.getValue("User_id", "");
+                String Review_user = pref.getValue("User_name", "");
                 String Review_time  = simpleDate.format(mDate);
 
                 if(Review_contents.equals("")){

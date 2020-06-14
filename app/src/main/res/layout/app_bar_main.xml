@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginRight="15dp"
-                android:background="@drawable/logo_transparent1" />
+                android:background="@drawable/logo_transparent12" />
 
         </androidx.appcompat.widget.Toolbar>
 

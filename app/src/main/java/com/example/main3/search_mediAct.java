@@ -320,7 +320,7 @@ public class search_mediAct extends FragmentActivity
 
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("병원정보");
+                builder.setTitle("약국정보");
                 builder.setMessage(
                         "이름 : " + Marker.get(marker_ID_number - 1).getName() +
                                 "\n주소 : " + Marker.get(marker_ID_number - 1).getAddress() +

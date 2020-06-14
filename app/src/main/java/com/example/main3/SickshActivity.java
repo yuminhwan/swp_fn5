@@ -70,7 +70,7 @@ public class SickshActivity extends AppCompatActivity {
                                             boolean success = jsonResponse.getBoolean("success");
                                             if(success){//사용할 수 있는 아이디라면
                                                 Toast.makeText(getApplicationContext(),"문진표가 정상적으로 삭제되었습니다.",Toast.LENGTH_SHORT).show();
-                                                Intent intent = new Intent(SickshActivity.this, MainActivity.class);
+                                                Intent intent = new Intent(SickshActivity.this, LoginInfActivity.class);
                                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                                 startActivity(intent);
                                             }else{//사용할 수 없는 아이디라면

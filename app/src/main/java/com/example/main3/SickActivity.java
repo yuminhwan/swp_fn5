@@ -49,7 +49,7 @@ public class SickActivity extends AppCompatActivity {
                     boolean success = jsonObject.getBoolean("success");
                     if (success) { // 문진표 작성 완료시
                         Toast.makeText(getApplicationContext(),"문진표 작성이 완료되었습니다.",Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SickActivity.this, MainActivity.class); //로그인 엑티비티로
+                        Intent intent = new Intent(SickActivity.this, LoginInfActivity.class); //로그인 엑티비티로
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     } else { // 문진표 작성 실패시

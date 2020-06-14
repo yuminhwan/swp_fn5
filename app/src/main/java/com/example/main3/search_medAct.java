@@ -158,7 +158,7 @@ public class search_medAct extends AppCompatActivity {
                             buffer.append("정보2 :");
                             xpp.next();
                             buffer.append(xpp.getText());//mapx 요소의 TEXT 읽어와서 문자열버퍼에 추가
-                            buffer.append("  ,  "); //줄바꿈 문자 추가
+                            buffer.append(","); //줄바꿈 문자 추가
                         }
 
                         break;

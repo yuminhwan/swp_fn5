@@ -43,33 +43,38 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:weightSum="10">
+        android:weightSum="10"
+        android:background="@drawable/everystorke">
 
         <EditText
             android:id="@+id/edit"
             android:layout_width="200dp"
             android:layout_height="match_parent"
-            android:hint="enter text to search"
+            android:layout_marginLeft="100dp"
+            android:hint="약품이름을 입력하세요"
             />
 
         <Button
             android:id="@+id/button"
             android:layout_width="80dp"
             android:layout_height="match_parent"
-            android:text="search"
-            android:textSize="14sp"
+            android:text="Search"
+            android:textSize="12sp"
             android:onClick="mOnClick"/>
 
     </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:background="@drawable/logo_2"
+        >
         <TextView
             android:id="@+id/result"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/everystorke"
             />
+
     </ScrollView>
 </LinearLayout>

@@ -64,7 +64,7 @@
             android:background="@drawable/rounded"
             android:ems="10"
             android:gravity="center"
-            android:hint="병원명을 입력하세요."
+            android:hint="약국명을 입력하세요."
             android:inputType="textPersonName"
             android:textColor="#000000"
             android:textSize="16dp"
