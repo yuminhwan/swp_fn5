@@ -23,6 +23,8 @@ import androidx.navigation.ui.NavigationUI;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.main3.Request.HospitalRequest;
+import com.example.main3.Request.MediRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private BackPressHandler backPressHandler = new BackPressHandler(this);
     private AlertDialog dialog;
     ArrayList<Clinic> clinics = new ArrayList<Clinic>();
-    ArrayList<com.example.main3.Medi> Medi = new ArrayList<com.example.main3.Medi>();
+    ArrayList<Medi> Medi = new ArrayList<Medi>();
     ArrayList<Location> clinic_address = new ArrayList<Location>();
     ArrayList<Location> clinic_address1 = new ArrayList<Location>();
     private ProgressDialog progressDialog;
@@ -246,8 +248,8 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             JSONArray jArray = new JSONArray(result);
                             clinics.clear();
-
-                            for (int i = 0; i <100 ; i++) {
+                            clinic_address.clear();
+                            for (int i = 0; i <100; i++) {
                                 Clinic clinic = new Clinic();
                                 JSONObject jsonObject1 = (JSONObject) jArray.get(i);
                                 clinic.setNumber(jsonObject1.getString("Hospital_num"));
@@ -267,13 +269,13 @@ public class MainActivity extends AppCompatActivity {
                                 clinic.setSaturday(jsonObject1.getString("Hospital_Sa"));
                                 clinic.setSunday(jsonObject1.getString("Hospital_Su"));
                                 clinic.setHoliday(jsonObject1.getString("Hospital_H"));
+                                Location location = new Location("");
+                                location.setLatitude(Double.parseDouble(jsonObject1.getString("Hospital_lat")));
+                                location.setLongitude(Double.parseDouble(jsonObject1.getString("Hospital_long")));
                                 clinics.add(clinic);
+                                clinic_address.add(location);
                             }
 
-                            clinic_address.clear();
-                            for(int i =0; i<clinics.size(); i++){
-                                clinic_address.add(addrToPoint(mContext, clinics.get(i).getAddress()));
-                            }
 
                             Intent intent = new Intent(MainActivity.this, search_hAct.class);
                             intent.putExtra("clinic", clinics);
@@ -354,9 +356,11 @@ public class MainActivity extends AppCompatActivity {
                         try {
                             JSONArray jArray = new JSONArray(result);
                             Medi.clear();
+                            clinic_address1.clear();
+
 
                             for (int i = 0; i <100; i++) {
-                                com.example.main3.Medi medi = new Medi();
+                                Medi medi = new Medi();
                                 JSONObject jsonObject1 = (JSONObject) jArray.get(i);
                                 medi.setNumber(jsonObject1.getString("Medi_num"));
                                 medi.setName(jsonObject1.getString("Medi_name"));
@@ -371,12 +375,11 @@ public class MainActivity extends AppCompatActivity {
                                 medi.setSaturday(jsonObject1.getString("Medi_Sa"));
                                 medi.setSunday(jsonObject1.getString("Medi_Su"));
                                 medi.setHoliday(jsonObject1.getString("Medi_H"));
+                                Location location = new Location("");
+                                location.setLatitude(Double.parseDouble(jsonObject1.getString("Medi_lat")));
+                                location.setLongitude(Double.parseDouble(jsonObject1.getString("Medi_long")));
                                 Medi.add(medi);
-                            }
-
-                            clinic_address1.clear();
-                            for(int i =0; i<Medi.size(); i++){
-                                clinic_address1.add(addrToPoint(mContext, Medi.get(i).getAddress()));
+                                clinic_address1.add(location);
                             }
 
                             Intent intent = new Intent(MainActivity.this, search_mediAct.class);
@@ -436,25 +439,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public static Location addrToPoint(Context context, String addr) {
-        Location location = new Location("");
-        Geocoder geocoder = new Geocoder(context);
-        List<Address> addresses = null;
-
-        try {
-            addresses = geocoder.getFromLocationName(addr,3);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if(addresses != null) {
-            for(int i = 0 ; i < addresses.size() ; i++) {
-                Address lating = addresses.get(i);
-                location.setLatitude(lating.getLatitude());
-                location.setLongitude(lating.getLongitude());
-            }
-        }
-        return location;
-    } // 주소명으로 위도 경도를 구하는 메소드
 
 }
 

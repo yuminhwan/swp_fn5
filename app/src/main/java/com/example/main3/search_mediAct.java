@@ -76,7 +76,6 @@ public class search_mediAct extends FragmentActivity
                 } else {
                     boolean check = false;
                     int check2 = 0;
-                    LatLng latLng1 = null;
                     LatLng latLng2 = null;
                     for (int i = 0; i < 100; i++) {
                         if (clinics.get(i).getName().contains(text)) {

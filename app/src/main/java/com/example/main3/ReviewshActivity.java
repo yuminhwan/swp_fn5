@@ -94,6 +94,7 @@ public class ReviewshActivity extends AppCompatActivity {
                 member.setReview_time(jsonObject1.getString("Review_time"));
                 member.setReview_contents(jsonObject1.getString("Review_contents"));
                 member.setReview_user(jsonObject1.getString("Review_user"));
+                member.setUser_id(jsonObject1.getString("User_id"));
                 members.add(member);
             }
             RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview_main_list);

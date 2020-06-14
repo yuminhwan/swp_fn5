@@ -7,19 +7,20 @@ public class MemberDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String  Review_score, Review_time, Review_title, Review_contents,Review_user;
+    private String  Review_score, Review_time, Review_title, Review_contents,Review_user , User_id;
 
 
 
     public MemberDTO() {
     }
 
-    public MemberDTO( String Review_score, String Review_time, String Review_title, String Review_contents, String Review_user) {
+    public MemberDTO( String Review_score, String Review_time, String Review_title, String Review_contents, String Review_user , String User_id) {
         this.Review_score = Review_score;
         this.Review_time = Review_time;
         this.Review_title = Review_title;
         this.Review_contents = Review_contents;
         this.Review_user = Review_user;
+        this.User_id = User_id;
     }
 
 
@@ -60,7 +61,13 @@ public class MemberDTO implements Serializable {
 
     public void setReview_user(String Review_user) { this.Review_user = Review_user; }
 
+    public String getUser_id() {
+        return User_id;
+    }
 
+    public void setUser_id(String user_id) {
+        User_id = user_id;
+    }
 
     @Override
     public String toString() {
@@ -70,6 +77,7 @@ public class MemberDTO implements Serializable {
                 ", Review_title='" + Review_title + '\'' +
                 ", Review_contents=" + Review_contents +
                 ", Review_user=" + Review_user +
+                ", User_id=" + User_id+
                 '}';
     }
 }
