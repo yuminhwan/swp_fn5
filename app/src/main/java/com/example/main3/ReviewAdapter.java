@@ -135,7 +135,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
                                     //Volley 라이브러리를 이용해서 실제 서버와 통신을 구현하는 부분
                                     ReviewdeRequest reviewderequest = new ReviewdeRequest(Review_user,
-                                            memberList.get(position).getReview_time(), responseListener);
+                                            memberList.get(position).getReview_time(), memberList.get(position).getReview_contents() , responseListener);
                                     RequestQueue queue = Volley.newRequestQueue(mContext);
                                     queue.add(reviewderequest);
 
