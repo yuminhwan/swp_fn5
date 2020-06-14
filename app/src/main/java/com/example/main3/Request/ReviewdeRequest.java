@@ -14,12 +14,13 @@ public class ReviewdeRequest extends StringRequest {
     final static private String URL = "http://211.110.104.63/reviewde.php";
 
     private Map<String, String> map;
-    public ReviewdeRequest( String Review_user, String Review_time , Response.Listener<String> listener) {
+    public ReviewdeRequest( String Review_user, String Review_time , String Review_contents ,Response.Listener<String> listener) {
         super(Request.Method.POST, URL, listener, null);
 
         map = new HashMap<>();
         map.put("Review_user",Review_user);
         map.put("Review_time",Review_time);
+        map.put("Review_contents",Review_contents);
     }
 
     @Override

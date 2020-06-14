@@ -69,6 +69,7 @@ public class ReviewActivity extends AppCompatActivity {
                 RbPreference pref = new RbPreference(mContext);
                 String Review_user = pref.getValue("User_name", "");
                 String Review_time  = simpleDate.format(mDate);
+                String User_id = pref.getValue("User_id","");
 
                 if(Review_contents.equals("")){
                     AlertDialog.Builder builder = new AlertDialog.Builder(ReviewActivity.this);
@@ -104,7 +105,7 @@ public class ReviewActivity extends AppCompatActivity {
                     }
                 };
                 // 서버로 Volley를 이용해서 요청을 함.
-                ReviewRequest reviewRequest = new ReviewRequest(Review_contents ,Review_score,Review_time,Review_user,Review_hos,responseListener);
+                ReviewRequest reviewRequest = new ReviewRequest(Review_contents ,Review_score,Review_time,Review_user,Review_hos,User_id,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(ReviewActivity.this);
                 queue.add(reviewRequest);
 

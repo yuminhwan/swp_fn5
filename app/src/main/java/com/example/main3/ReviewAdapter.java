@@ -84,7 +84,7 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ReviewView
 
         viewholder.tv_reviewuser.setPaintFlags(viewholder.tv_reviewuser.getPaintFlags() | Paint.FAKE_BOLD_TEXT_FLAG);
 
-        if (memberList.get(position).getReview_user().equals(Review_user)){
+        if (memberList.get(position).getUser_id().equals(Review_user)){
             viewholder.btn_delete.setVisibility(View.VISIBLE);
         }
         else{

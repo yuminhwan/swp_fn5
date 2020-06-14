@@ -15,7 +15,7 @@ public class ReviewRequest extends StringRequest {
     private Map<String, String> map;
 
 
-    public ReviewRequest(String Review_contents, String Review_score , String Review_time, String Review_user, String Review_hos  , Response.Listener<String> listener) {
+    public ReviewRequest(String Review_contents, String Review_score , String Review_time, String Review_user, String Review_hos,String User_id , Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
@@ -24,6 +24,7 @@ public class ReviewRequest extends StringRequest {
         map.put("Review_time", Review_time);
         map.put("Review_user", Review_user);
         map.put("Review_hos", Review_hos);
+        map.put("User_id",User_id);
 
     }
 

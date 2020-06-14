@@ -23,6 +23,8 @@ import androidx.navigation.ui.NavigationUI;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.main3.Request.HospitalRequest;
+import com.example.main3.Request.MediRequest;
 
 import org.json.JSONArray;
 import org.json.JSONException;
