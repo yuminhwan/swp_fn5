@@ -46,7 +46,7 @@
 
 ## 6. 개인 구현 내용 
 - PHP를 통한 안드로이드와 DB 통신
-- JAVA를 이용한 문서 데이터 추출
+- JAVA를 이용한 문서 데이터 추출  :pushpin: [바로 가기](https://github.com/yuminhwan/swp_fn5/tree/master/%EB%8D%B0%EC%9D%B4%ED%84%B0%20%EC%B6%94%EC%B6%9C%20)
 - 추출 데이터 기반 구글 맵 API 활용
 - 기본적인 사용자 기능
     - 회원가입 및 로그인
@@ -84,7 +84,4 @@
 
 ### -7)구현 영상
 :pushpin: [구동 영상](https://youtu.be/dc-D-hFg1Fs)
-
-
-
 
