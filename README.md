@@ -79,6 +79,7 @@
 
 <img src = "https://user-images.githubusercontent.com/65746780/139916179-6a4256eb-4942-4ead-98ba-90dcbcf51f74.jpg" width="200" height="400"/>  &nbsp;  &nbsp;<img src = "https://user-images.githubusercontent.com/65746780/139916190-cc3ca1b7-b87b-430b-add2-ad72d148fee6.jpg" width="200" height="400"/>
 
-
+### 구동 영상 
+<iframe width="640" height="360" src="https://youtu.be/dc-D-hFg1Fs" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 
 
