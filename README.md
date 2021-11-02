@@ -1,6 +1,9 @@
 # 진주 병원 정보 어플리케이션
 > 2020-1학기 소프트웨어설계프로젝트 J-HI
 
+:pushpin: [최종 보고서](https://github.com/yuminhwan/swp_fn5/blob/master/%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C/SWP4%ED%8C%80_%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf)
+
+
 기존의 병원 어플처럼 수도권 위주의 정보를 제공하는 것이 아닌 
 
 진주 지역내의 병원 정보를 제공하며 코로나 확진자 정보, 약국, 건강 정보 등 다양한기능을 제공하는 안드로이드 어플리케이션
