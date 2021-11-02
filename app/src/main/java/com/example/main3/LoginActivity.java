@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String User_location= jsonObject.getString("User_location"); // 로그인한 유저 정보 받기
 
                                 RbPreference pref = new RbPreference(mContext);
-                                pref.put("User_name",User_name);
+                                 pref.put("User_name",User_name);
                                 pref.put("User_num", User_num);
                                 pref.put("User_id", User_id);
                                 pref.put("User_pass", User_pass);

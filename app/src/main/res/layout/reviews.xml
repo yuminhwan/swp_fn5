@@ -27,64 +27,62 @@
                 android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/two"
-                    android:layout_width="320dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:orientation="vertical">
-
+                        android:id="@+id/two"
+                        android:layout_width="320dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical">
 
 
                     <TextView
-                        android:id="@+id/tv_reviewuser"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="글작성자"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        card_view:layout_constraintStart_toStartOf="parent"
-                        card_view:layout_constraintTop_toTopOf="parent" />
+                            android:id="@+id/tv_reviewuser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="글작성자"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            card_view:layout_constraintStart_toStartOf="parent"
+                            card_view:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tv_reviewtime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="17dp"
-                        android:text="작성시간"
-                        android:textColor="#8C8C8C"
-                        android:textSize="14sp"
-                        card_view:layout_constraintStart_toEndOf="@+id/tv_score"
-                        card_view:layout_constraintTop_toBottomOf="@+id/tv_reviewuser" />
+                            android:id="@+id/tv_reviewtime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="17dp"
+                            android:text="작성시간"
+                            android:textColor="#8C8C8C"
+                            android:textSize="14sp"
+                            card_view:layout_constraintStart_toEndOf="@+id/tv_score"
+                            card_view:layout_constraintTop_toBottomOf="@+id/tv_reviewuser" />
 
                     <RatingBar
-                        android:id="@+id/tv_score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:isIndicator="true"
-                        android:max="5"
-                        android:numStars="5"
-                        android:rating="0"
-                        android:stepSize="0.5"
-                        android:layout_marginTop="10dp"
-                        card_view:layout_constraintStart_toStartOf="parent"
-                        card_view:layout_constraintTop_toBottomOf="@id/tv_reviewuser"
-                        android:theme="@style/RatingBar"
-                        style="?android:attr/ratingBarStyleIndicator" />
+                            android:id="@+id/tv_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:max="5"
+                            android:numStars="5"
+                            android:rating="0"
+                            android:stepSize="0.5"
+                            android:layout_marginTop="10dp"
+                            card_view:layout_constraintStart_toStartOf="parent"
+                            card_view:layout_constraintTop_toBottomOf="@id/tv_reviewuser"
+                            android:theme="@style/RatingBar"
+                            style="?android:attr/ratingBarStyleIndicator" />
 
                     <TextView
-                        android:id="@+id/tv_reviewcontents"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="내용"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:layout_marginTop="10dp"
-                        card_view:layout_constraintStart_toStartOf="parent"
-                        card_view:layout_constraintTop_toBottomOf="@+id/tv_score" />
-
+                            android:id="@+id/tv_reviewcontents"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="내용"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:layout_marginTop="10dp"
+                            card_view:layout_constraintStart_toStartOf="parent"
+                            card_view:layout_constraintTop_toBottomOf="@+id/tv_score" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
