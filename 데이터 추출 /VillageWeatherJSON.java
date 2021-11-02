@@ -12,159 +12,153 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-/*
- * 
- * VillageWeatherJSON Å¬·¡½º´Â ±â»óÃ»¿¡¼­ Á¦°øÇÏ´Â µ¿³» ±â»óµ¥ÀÌÅÍ¸¦ JSONÇüÅÂ·Î °¡Á®¿À´Â Å¬·¡½ºÀÔ´Ï´Ù.
- * µ¿³» ±â»óÁ¤º¸¸¦ JSONµ¥ÀÌÅÍ·Î °¡Á®¿Í¼­ VillageWeather°´Ã¼¸¦ ¸¸µé¾î ÀúÀåÇÏ¿© ¹ÝÈ¯ÇÕ´Ï´Ù. */
+
 public class VillageWeatherJSON {
-	// ¼­ºñ½ºÅ°·Î ±â»óÃ»¿¡¼­ Á¦°øÇØÁÝ´Ï´Ù. °íÁ¤ÀûÀ¸·Î »ç¿ëµÇ±â ¶§¹®¿¡ final staticº¯¼ö·Î ¼³Á¤ÇÏ°Ú½À´Ï´Ù.
 	final static String serviceKey = "=4iLTUhbwnYU%2FGqfRYKjRgjzjk3YxN%2Fp0Va%2FWf71ZHA4fiCaYkSgReWDTmd6sVwQCXV7KJ6DBQ2VOk4HD%2FJlraQ%3D%3D";
 
 	public VillageWeather getVillageWeather(int a) {
 		 String urlStr = "http://apis.data.go.kr/B552657/HsptlAsembySearchService/getHsptlMdcncListInfoInqire?serviceKey=4iLTUhbwnYU"
 	         		+ "%2FGqfRYKjRgjzjk3YxN%2Fp0Va%2FWf71ZHA4fiCaYkSgReWDTmd6sVwQCXV7KJ6DBQ2VOk4HD%2FJlraQ%3D%3D&Q0=%EC%A7%84%EC%A3%BC%EC%8B%9C&numOfRows=453" + "&_type=json";
 			 
-	       VillageWeather vl = new VillageWeather(); // °á°ú µ¥ÀÌÅÍ¸¦ ÀúÀåÇÒ µ¿³»±â»ó°´Ã¼¸¦ ¸¸µì´Ï´Ù.
+	       VillageWeather vl = new VillageWeather(); 
 	        try {
-	        	URL url = new URL(urlStr); // ¿Ï¼ºµÈ urlStrÀ» »ç¿ëÇØ¼­ URL ¸¸µé¾î ÇØ´ç µ¥ÀÌÅÍ¸¦ °¡Á®¿É´Ï´Ù.
+	        	URL url = new URL(urlStr);
 	            BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(),"UTF-8"));
 	            String line = "";
 	            String result="";
-	            //¹öÆÛ¿¡ ÀÖ´Â Á¤º¸¸¦ ¹®ÀÚ¿­·Î º¯È¯.
-	            while((line=bf.readLine())!=null){ //bf ¿¡ ÀÖ´Â°ªÀ» ÀÐ¾î¿Í¼­ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ¸¸µì´Ï´Ù.
+	            while((line=bf.readLine())!=null){ 
 	                result=result.concat(line);
 	            }
-	           //System.out.println(result);
 	            
-	            //¹®ÀÚ¿­À» JSONÀ¸·Î ÆÄ½ÌÇÕ´Ï´Ù. ¸¶Áö¸· ¹è¿­ÇüÅÂ·Î ÀúÀåµÈ µ¥ÀÌÅÍ±îÁö ÆÄ½ÌÇØ³À´Ï´Ù.
+	            
 	            JSONParser jsonParser = new JSONParser();
 	            JSONObject jsonObj = (JSONObject) jsonParser.parse(result);
 	            JSONObject parse_response = (JSONObject) jsonObj.get("response");
-	            JSONObject parse_body = (JSONObject) parse_response.get("body");// response ·Î ºÎÅÍ body Ã£¾Æ¿À±â
-	            JSONObject parse_items = (JSONObject) parse_body.get("items");// body ·Î ºÎÅÍ items ¹Þ¾Æ¿À±â
-	            JSONArray parse_item = (JSONArray) parse_items.get("item");// items·Î ºÎÅÍ itemlist ¸¦ ¹Þ¾Æ¿À±â itemlist : µÚ¿¡ [ ·Î ½ÃÀÛÇÏ¹Ç·Î jsonarrayÀÌ´Ù.
+	            JSONObject parse_body = (JSONObject) parse_response.get("body");
+	            JSONObject parse_items = (JSONObject) parse_body.get("items");
+	            JSONArray parse_item = (JSONArray) parse_items.get("item");
 	            
 	            
 	    		JSONObject obj;
 	    	
 			for (int i = 0; i < a; i++) {
-				obj = (JSONObject) parse_item.get(i); // ÇØ´ç itemÀ» °¡Á®¿É´Ï´Ù.
+				obj = (JSONObject) parse_item.get(i); 
 				if (obj.get("dutyAddr")!= null) {
 					vl.Hospital_location = (obj.get("dutyAddr")).toString();
 				}
 				else {
-					vl.Hospital_location = "Á¤º¸¾øÀ½";
+					vl.Hospital_location = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyDivNam")!= null) {
 					vl.Hospital_category = (obj.get("dutyDivNam")).toString();
 				}
 				else {
-					vl.Hospital_category = "Á¤º¸¾øÀ½";
+					vl.Hospital_category = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyName")!= null) {
 					vl.Hospital_name = (obj.get("dutyName")).toString();
 				}
 				else {
-					vl.Hospital_name = "Á¤º¸¾øÀ½";
+					vl.Hospital_name = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTel1")!= null) {
 					vl.Hospital_tel = (obj.get("dutyTel1")).toString();
 				}
 				else {
-					vl.Hospital_tel = "Á¤º¸¾øÀ½";
+					vl.Hospital_tel = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTel1")!= null) {
 					vl.Hospital_tel = (obj.get("dutyTel1")).toString();
 				}
 				else {
-					vl.Hospital_tel = "Á¤º¸¾øÀ½";
+					vl.Hospital_tel = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTel1")!= null) {
 					vl.Hospital_tel = (obj.get("dutyTel1")).toString();
 				}
 				else {
-					vl.Hospital_tel = "Á¤º¸¾øÀ½";
+					vl.Hospital_tel = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTel1")!= null) {
 					vl.Hospital_tel = (obj.get("dutyTel1")).toString();
 				}
 				else {
-					vl.Hospital_tel = "Á¤º¸¾øÀ½";
+					vl.Hospital_tel = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTel1")!= null) {
 					vl.Hospital_tel = (obj.get("dutyTel1")).toString();
 				}
 				else {
-					vl.Hospital_tel = "Á¤º¸¾øÀ½";
+					vl.Hospital_tel = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTel1")!= null) {
 					vl.Hospital_tel = (obj.get("dutyTel1")).toString();
 				}
 				else {
-					vl.Hospital_tel = "Á¤º¸¾øÀ½";
+					vl.Hospital_tel = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime1s")!= null) {
 					vl.Hospital_M = (obj.get("dutyTime1s")).toString() + (obj.get("dutyTime1c")).toString();
 				}
 				else {
-					vl.Hospital_M = "Á¤º¸¾øÀ½";
+					vl.Hospital_M = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime2s")!= null) {
 					vl.Hospital_Tu = (obj.get("dutyTime2s")).toString() + (obj.get("dutyTime2c")).toString();
 				}
 				else {
-					vl.Hospital_Tu = "Á¤º¸¾øÀ½";
+					vl.Hospital_Tu = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime3s")!= null) {
 					vl.Hospital_W = (obj.get("dutyTime3s")).toString() + (obj.get("dutyTime3c")).toString();
 				}
 				else {
-					vl.Hospital_W = "Á¤º¸¾øÀ½";
+					vl.Hospital_W = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime4s")!= null) {
 					vl.Hospital_Th = (obj.get("dutyTime4s")).toString() + (obj.get("dutyTime4c")).toString();
 				}
 				else {
-					vl.Hospital_Th = "Á¤º¸¾øÀ½";
+					vl.Hospital_Th = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime5s")!= null) {
 					vl.Hospital_F = (obj.get("dutyTime5s")).toString() + (obj.get("dutyTime5c")).toString();
 				}
 				else {
-					vl.Hospital_F = "Á¤º¸¾øÀ½";
+					vl.Hospital_F = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime6s")!= null) {
 					vl.Hospital_Sa = (obj.get("dutyTime6s")).toString() + (obj.get("dutyTime6c")).toString();
 				}
 				else {
-					vl.Hospital_Sa = "Á¤º¸¾øÀ½";
+					vl.Hospital_Sa = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime7s")!= null) {
 					vl.Hospital_Su = (obj.get("dutyTime7s")).toString() + (obj.get("dutyTime7c")).toString();
 				}
 				else {
-					vl.Hospital_Su = "Á¤º¸¾øÀ½";
+					vl.Hospital_Su = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				if (obj.get("dutyTime8s")!= null) {
 					vl.Hospital_H = (obj.get("dutyTime8s")).toString() + (obj.get("dutyTime8c")).toString();				}
 				else {
-					vl.Hospital_H = "Á¤º¸¾øÀ½";
+					vl.Hospital_H = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 				}
 				
 				
@@ -182,6 +176,6 @@ public class VillageWeatherJSON {
 			}
 	        
 	        
-			return vl;// ¸ðµç°ªÀÌ ÀúÀåµÈ VillageWeather°´Ã¼¸¦ ¹ÝÈ¯ÇÕ´Ï´Ù.
+			return vl;// ï¿½ï¿½ç°ªï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ VillageWeatherï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½.
 	}
 }
