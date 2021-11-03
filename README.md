@@ -3,6 +3,7 @@
 
 :pushpin: [최종 보고서](https://github.com/yuminhwan/swp_fn5/blob/master/%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C/SWP4%ED%8C%80_%EC%B5%9C%EC%A2%85%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf)
 
+:pushpin: [발표 PPT](https://docs.google.com/presentation/d/1-k67LYqb7ySSyTlzVd62m0A-e393-SzD/edit?usp=sharing&ouid=104454833533550581858&rtpof=true&sd=true)
 
 기존의 병원 어플처럼 수도권 위주의 정보를 제공하는 것이 아닌 
 
